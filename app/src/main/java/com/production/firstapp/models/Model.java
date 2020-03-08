@@ -2,7 +2,7 @@ package com.production.firstapp.models;
 
 import org.json.JSONObject;
 
-class Model {
+public class Model {
     private JSONObject mJsonObject;
 
     public String getName(){
