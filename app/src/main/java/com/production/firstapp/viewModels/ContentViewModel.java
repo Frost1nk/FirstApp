@@ -24,7 +24,7 @@ public class ContentViewModel extends AndroidViewModel {
 
     public ContentViewModel(@NonNull Application application,String itemFile) {
         super(application);
-        mItemFile = itemFile;
+        this.mItemFile = itemFile;
     }
 
     private void reloadData(){

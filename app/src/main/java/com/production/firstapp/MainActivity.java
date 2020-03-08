@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnMoreApps.findViewById(R.id.btnMoreApps);
-        mRecycleView.findViewById(R.id.recycleView);
+        btnMoreApps = findViewById(R.id.btnMoreApps);
+        mRecycleView = findViewById(R.id.recyclerView);
 
         mAdapter = new AdapterRecycleView(this, new ArrayList<Model>());
         mRecycleView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
         mContentViewModel.getItems().removeObservers(this);
     }

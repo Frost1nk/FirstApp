@@ -9,14 +9,15 @@
     <LinearLayout
         android:id="@+id/bannerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bannerLayout"/>
+        android:layout_below="@+id/bannerLayout"
+        android:layout_above="@+id/btnMoreApps"/>
 
     <Button
         android:id="@+id/btnMoreApps"
