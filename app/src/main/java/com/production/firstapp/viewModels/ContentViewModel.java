@@ -32,9 +32,12 @@ public class ContentViewModel extends AndroidViewModel {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("type","Content");
+            jsonObject.put("name","Content");
+            jsonObject.put("imageLink","https://f.vividscreen.info/soft/6cf540841c8ce488bcfea9b5cda77626/Saint-Isaacs-Cathedral-in-Saint-Petersburg-wide-i.jpg");
         } catch (JSONException e){
             e.printStackTrace();
         }
+        models.add(new Model(jsonObject));
         models.add(new Model(jsonObject));
         models.add(new Model(jsonObject));
         models.add(new Model(jsonObject));

@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/imageViewItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:background="@null"
         android:foreground="?android:attr/selectableItemBackground"
         android:gravity="center"
         android:scaleType="centerCrop"
-        tools:ignore="contentDescription"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="contentDescription" />
+
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:ellipsize="end"
         android:maxLength="100"
         android:maxLines="1"
+        android:text="TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewItem"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="TEST"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageViewItem" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

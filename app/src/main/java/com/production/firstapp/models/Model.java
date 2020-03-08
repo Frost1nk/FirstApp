@@ -3,6 +3,7 @@ package com.production.firstapp.models;
 import org.json.JSONObject;
 
 public class Model {
+
     private JSONObject mJsonObject;
 
     public Model(JSONObject jsonObject) {
@@ -15,5 +16,9 @@ public class Model {
 
     public String getType() {
         return mJsonObject.optString("type");
+    }
+
+    public String getImageLink(){
+        return mJsonObject.optString("imageLink");
     }
 }
