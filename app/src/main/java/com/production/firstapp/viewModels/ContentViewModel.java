@@ -11,6 +11,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.production.firstapp.models.Model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContentViewModel extends AndroidViewModel {
@@ -24,7 +28,24 @@ public class ContentViewModel extends AndroidViewModel {
     }
 
     private void reloadData(){
+        List<Model> models = new ArrayList<>();
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("type","Content");
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
+        models.add(new Model(jsonObject));
 
+        mutableLiveData.postValue(models);
     }
 
     public LiveData<List<Model>> getItems(){

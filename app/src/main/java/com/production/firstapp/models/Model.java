@@ -5,6 +5,10 @@ import org.json.JSONObject;
 public class Model {
     private JSONObject mJsonObject;
 
+    public Model(JSONObject jsonObject) {
+        this.mJsonObject = jsonObject;
+    }
+
     public String getName() {
         return mJsonObject.optString("name");
     }

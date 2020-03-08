@@ -48,8 +48,10 @@ public class AdapterRecycleView extends RecyclerView.Adapter<RecyclerView.ViewHo
         switch (holder.getItemViewType()){
             case CONTENT_VIEW_TYPE:
                 ((ContentHolder) holder).onBind(models.get(position));
+                break;
             case APP_VIEW_TYPE:
                 ((AppHolder) holder).onBind(models.get(position));
+                break;
         }
     }
 
