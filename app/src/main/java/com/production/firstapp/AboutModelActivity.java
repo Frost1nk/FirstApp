@@ -24,6 +24,7 @@ public class AboutModelActivity extends AppCompatActivity {
 
     private Button btnSaveGallery;
     private Button btnSaveMCPE;
+    private Button btnFavourites;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,17 +32,42 @@ public class AboutModelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_model);
 
         SerializableJson serializableJson = getIntent().getParcelableExtra("json");
-        if(serializableJson == null)
+        if (serializableJson == null)
             finish();
-            model = new Model(serializableJson.getJsonObject());
-            labelName = findViewById(R.id.labelName);
-            labelShow = findViewById(R.id.labelShow);
-            labelDownload = findViewById(R.id.labelDownload);
-            labelFavorite = findViewById(R.id.labelFavorite);
+        model = new Model(serializableJson.getJsonObject());
+        labelName = findViewById(R.id.labelName);
+        labelShow = findViewById(R.id.labelShow);
+        labelDownload = findViewById(R.id.labelDownload);
+        labelFavorite = findViewById(R.id.labelFavorite);
 
-            imagePreview = findViewById(R.id.imagePreview);
+        imagePreview = findViewById(R.id.imagePreview);
 
-            btnSaveGallery = findViewById(R.id.btnSaveGallery);
-            btnSaveMCPE = findViewById(R.id.btnSaveMinecraft);
+        btnSaveGallery = findViewById(R.id.btnSaveGallery);
+        btnSaveMCPE = findViewById(R.id.btnSaveMinecraft);
+        btnFavourites = findViewById(R.id.btnFavourites);
+
+        labelName.setText(model.getName());
+        labelShow.setText("1");
+        labelDownload.setText("1");
+        labelFavorite.setText("1");
+
+        btnSaveGallery.setOnClickListener(v -> {
+
+        });
+
+        btnSaveMCPE.setOnClickListener(v -> {
+
+        });
+
+        btnFavourites.setOnClickListener(v -> {
+
+        });
+
+        GlideApp
+                .with(this)
+                .load(model.getImageLink())
+                .fitCenter()
+                .centerCrop()
+                .into(imagePreview);
     }
 }
