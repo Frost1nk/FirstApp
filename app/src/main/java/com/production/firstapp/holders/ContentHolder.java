@@ -1,5 +1,6 @@
 package com.production.firstapp.holders;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,9 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.production.firstapp.AboutModelActivity;
 import com.production.firstapp.GlideApp;
 import com.production.firstapp.R;
 import com.production.firstapp.models.Model;
+import com.production.firstapp.models.SerializableJson;
 
 public class ContentHolder extends RecyclerView.ViewHolder {
 
@@ -30,7 +33,9 @@ public class ContentHolder extends RecyclerView.ViewHolder {
         }
 
         View.OnClickListener onClickListener = v -> {
-
+            Intent intent = new Intent(itemView.getContext(), AboutModelActivity.class);
+            intent.putExtra("json",new SerializableJson(model.getJsonObject()));
+            itemView.getContext().startActivity(intent);
         };
 
         //ImageView

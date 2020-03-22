@@ -21,4 +21,8 @@ public class Model {
     public String getImageLink(){
         return mJsonObject.optString("imageLink");
     }
+
+    public JSONObject getJsonObject(){
+        return mJsonObject;
+    }
 }
